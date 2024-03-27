@@ -35,7 +35,7 @@ export default function Reservation() {
         setDate("");
         navigate("/success");
       } catch (error) {
-        toast.error(error.response.message);
+        toast.error("message not sent");
       }
     };
   
