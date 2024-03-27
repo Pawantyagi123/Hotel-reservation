@@ -30,7 +30,7 @@ const reservationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    reservationdate:{
+    date:{
         type: String,
         required: true,
     }

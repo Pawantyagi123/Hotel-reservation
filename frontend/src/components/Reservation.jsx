@@ -8,7 +8,7 @@ export default function Reservation() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
-    const [reservationdate, setReservationdate] = useState("");
+    const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [phone, setPhone] = useState(0);
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function Reservation() {
       try {
         const { data } = await axios.post(
           "https://rich-bear-waistcoat.cyclic.app/api/v1/reservation/send",
-          { firstName, lastName, email, phone,  reservationdate, time },
+          { firstName, lastName, email, phone, date, time },
           {
             headers: {
               "Content-Type": "application/json",
@@ -32,10 +32,10 @@ export default function Reservation() {
         setPhone(0);
         setEmail("");
         setTime("");
-        setReservationdate("");
+        setDate("");
         navigate("/success");
       } catch (error) {
-        toast.error("message not sent");
+        toast.error(error.response.data.message);
       }
     };
   
@@ -68,8 +68,8 @@ export default function Reservation() {
                   <input
                     type="date"
                     placeholder="Date"
-                    value={ reservationdate}
-                    onChange={(e) => setReservationdate(e.target.value)}
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                   />
                   <input
                     type="time"
