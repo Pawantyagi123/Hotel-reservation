@@ -17,7 +17,7 @@ export default function Reservation() {
       e.preventDefault();
       try {
         const { data } = await axios.post(
-          "http://localhost:3000/api/v1/reservation/send",
+          "https://rich-bear-waistcoat.cyclic.app/api/v1/reservation/send",
           { firstName, lastName, email, phone,  reservationdate, time },
           {
             headers: {
