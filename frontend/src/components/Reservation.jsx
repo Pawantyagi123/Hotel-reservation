@@ -17,7 +17,7 @@ export default function Reservation() {
       e.preventDefault();
       try {
         const { data } = await axios.post(
-          "https://rich-bear-waistcoat.cyclic.app/api/v1/reservation/send",
+          "https://rich-bear-waistcoat.cyclic.app/reservation/send",
           { firstName, lastName, email, phone, date, time },
           {
             headers: {
@@ -35,7 +35,7 @@ export default function Reservation() {
         setDate("");
         navigate("/success");
       } catch (error) {
-        toast.error("message not sent");
+        toast.error(error.response.data.message);
       }
     };
   
