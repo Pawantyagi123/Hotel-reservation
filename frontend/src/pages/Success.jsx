@@ -22,7 +22,7 @@ return () => clearInterval(timeoutId);
   return (
     <><section className="notFound">
       <div className="container">
-        <img src="/public/sandwich.png" alt="success"/>
+        <img src="/sandwich.png" alt="success"/>
         <h1>Redirecting to home in {countdown} seconds...</h1>
         <Link to="/">Back to Home <HiOutlineArrowNarrowRight/></Link>
       </div>
