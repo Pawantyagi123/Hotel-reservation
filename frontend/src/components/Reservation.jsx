@@ -26,13 +26,14 @@ export default function Reservation() {
             withCredentials: true,
           }
         );
+           toast.success("Reservation Done Successfully");
+
         setFirstName("");
         setLastName("");
         setPhone(0);
         setEmail("");
         setTime("");
         setDate("");
-          toast.success(data.message);
         navigate("/success");
       } catch (error) {
         toast.error(error.response.data.message);
