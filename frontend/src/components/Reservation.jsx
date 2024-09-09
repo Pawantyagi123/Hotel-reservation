@@ -17,7 +17,7 @@ export default function Reservation() {
       e.preventDefault();
       try {
         const { data } = await axios.post(
-          "https://rich-bear-waistcoat.cyclic.app/reservation/send",
+          "https://hotel-reservation-hsjz.vercel.app//reservation/send",
           { firstName, lastName, email, phone, date, time },
           {
             headers: {
